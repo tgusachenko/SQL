@@ -24,28 +24,28 @@ WHERE age BETWEEN 50 AND 100;
 SELECT DISTINCT age
 FROM characters;
 
- SELECT * FROM characters
- WHERE faculty = 'Gryffindor' AND age > 30;
+SELECT * FROM characters
+WHERE faculty = 'Gryffindor' AND age > 30;
  
- SELECT DISTINCT faculty FROM characters
- LIMIT 3;
+SELECT DISTINCT faculty FROM characters
+LIMIT 3;
  
- SELECT fname FROM characters
- WHERE fname LIKE 'H____' OR fname LIKE 'L%';
+SELECT fname FROM characters
+WHERE fname LIKE 'H____' OR fname LIKE 'L%';
  
- SELECT AVG(age) AS avg_age
- FROM characters;
+SELECT AVG(age) AS avg_age
+FROM characters;
  
- SELECT char_id 
- FROM characters
- WHERE char_id = 11;
+SELECT char_id 
+FROM characters
+WHERE char_id = 11;
  
- SELECT lname FROM characters
- WHERE lname LIKE '%a%';
+SELECT lname FROM characters
+WHERE lname LIKE '%a%';
  
- SELECT fname AS 'Half-Blood Prince' 
- FROM characters
- WHERE char_id = 10;
+SELECT fname AS 'Half-Blood Prince' 
+FROM characters
+WHERE char_id = 10;
  
 SELECT char_id, patronus
 FROM characters
