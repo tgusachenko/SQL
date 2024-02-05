@@ -16,7 +16,6 @@ SELECT fname, lname, age
 FROM characters
 ORDER BY age DESC;
 
-
 SELECT fname, age
 FROM characters
 WHERE age BETWEEN 50 AND 100;
@@ -117,7 +116,6 @@ WHERE age >
 	FROM characters
 	WHERE patronus = 'Unknown'
     );   
-    
-    
-    
+
+
     
