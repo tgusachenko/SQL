@@ -5,5 +5,4 @@
  <tr><td><a href="README_eng.md"><img src="images/us-flag.png" height="13"> English</a></td></tr>
 </table>
 
-В рамках домашнего задания были сделаны запросы к MySQL
-
+In english
