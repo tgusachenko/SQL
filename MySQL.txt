@@ -1,0 +1,123 @@
+SELECT * FROM characters;
+
+SELECT * FROM library;
+
+SELECT fname, lname, patronus
+FROM characters
+WHERE patronus IS NOT null;
+
+SELECT lname FROM characters
+WHERE lname LIKE '%e';
+
+SELECT SUM(age) AS sum_age
+FROM characters;
+
+SELECT fname, lname, age
+FROM characters
+ORDER BY age DESC;
+
+
+SELECT fname, age
+FROM characters
+WHERE age BETWEEN 50 AND 100;
+
+SELECT DISTINCT age
+FROM characters;
+
+ SELECT * FROM characters
+ WHERE faculty = 'Gryffindor' AND age > 30;
+ 
+ SELECT DISTINCT faculty FROM characters
+ LIMIT 3;
+ 
+ SELECT fname FROM characters
+ WHERE fname LIKE 'H____' OR fname LIKE 'L%';
+ 
+ SELECT AVG(age) AS avg_age
+ FROM characters;
+ 
+ SELECT char_id 
+ FROM characters
+ WHERE char_id = 11;
+ 
+ SELECT lname FROM characters
+ WHERE lname LIKE '%a%';
+ 
+ SELECT fname AS 'Half-Blood Prince' 
+ FROM characters
+ WHERE char_id = 10;
+ 
+SELECT char_id, patronus
+FROM characters
+WHERE patronus IS NOT NULL AND patronus != 'Unknown'
+ORDER BY patronus;
+
+SELECT fname, lname FROM characters
+WHERE lname IN  ('Crabbe', 'Granger','Diggory');
+
+SELECT MIN(age) AS age_min
+FROM characters;
+
+SELECT fname FROM characters
+UNION
+SELECT book_name FROM library;
+
+SELECT faculty FROM characters
+GROUP BY faculty
+HAVING COUNT(faculty) > 1;
+
+SELECT fname, lname, 
+CASE 
+	WHEN faculty = 'Gryffindor' THEN 'Godric'
+    WHEN faculty = 'Slytherin' THEN 'Salazar'
+    WHEN faculty = 'Ravenclaw' THEN 'Rowena'
+    WHEN faculty = 'Hufflepuff' THEN 'Helga'
+    ELSE 'Muggle'
+END AS Founders
+FROM characters;
+
+SELECT lname FROM characters
+WHERE lname NOT REGEXP '^S' OR '^H' OR '^L';
+
+SELECT characters.fname, characters.lname, library.book_name
+FROM characters
+INNER JOIN library ON characters.char_id = library.char_id;
+
+SELECT characters.fname, characters.lname, library.book_name
+FROM characters
+LEFT JOIN library ON characters.char_id = library.char_id;
+
+SELECT characters.patronus, library.book_name
+FROM characters
+RIGHT JOIN library ON characters.char_id = library.char_id;
+
+SELECT characters.fname, characters.lname, characters.age, library.book_name
+FROM characters
+INNER JOIN library ON characters.char_id = library.char_id
+WHERE characters.age > 15;
+
+SELECT characters.fname, library.book_name, library.start_date, library.end_date
+FROM characters
+INNER JOIN library ON characters.char_id = library.char_id
+WHERE characters.age < 15 AND characters.patronus is NULL;
+
+SELECT COUNT(book_name) AS book_amount
+FROM library
+WHERE end_date >
+	(SELECT library.end_date
+	FROM library
+	INNER JOIN characters ON characters.char_id = library.char_id
+	WHERE characters.fname = 'Hermione'
+    );
+    
+SELECT patronus
+FROM characters
+WHERE age >
+	(SELECT age
+	FROM characters
+	WHERE patronus = 'Unknown'
+    );   
+    
+    
+    
+    

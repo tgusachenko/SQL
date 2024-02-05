@@ -5,4 +5,4 @@
  <tr><td><a href="README_eng.md"><img src="images/us-flag.png" height="13"> English</a></td></tr>
 </table>
 
-In english
+In the context of the homework assignment for the course, MySQL queries were created
